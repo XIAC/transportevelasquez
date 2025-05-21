@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista camiones</h1>
+    <table border="1">
+         <!-- encabezado -->
+        <tr>
+          <th>Matricula</th>
+          <th>Maximo Peso</th>
+          <th>Maximo Volumen</th>
+        </tr>
+        <!-- iteracion datos -->
+        <% camiones.forEach(camion => { %>
+            <tr>
+                <!-- <td><%=          %></td> -->
+                <td><%=   camion.Matricula    %></td>
+                <td><%=    camion.MaxPeso      %></td> 
+                <td><%=     camion.MaxVolumen     %></td>
+            </tr>
+        <% }); %>
+      
+      </table>
+</body>
+</html>

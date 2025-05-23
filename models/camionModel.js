@@ -19,8 +19,7 @@ exports.obtenerCamionesNoUtilizados = (fechaInicio, fechaFinal, callback) => {
             console.log('Error en la consulta', err);
             return;
         };
-        console.log(result);
-        callback(null, result);
+        callback(null, result[0]);
       });
 }    
 

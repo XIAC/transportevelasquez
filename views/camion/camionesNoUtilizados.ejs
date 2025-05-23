@@ -1,13 +1,28 @@
 <h2>
     CAMIONES NO UTILIZADOS
 </h2>
-<table border="1">
-   <tr>
-     <th>Matricula</th>
-     <th>Maximo Peso</th>
-     <th>Maximo Volumen</th>
-   </tr>
-   <!-- iteracion datos -->
-  
- 
- </table>
+<form method="GET" action="/reporte/camiones-no-utilizados">
+    <label>Fecha Inicio</label>
+    <input type="date" name="fechaInicio">
+    <label>Fecha Final</label>
+    <input type="date" name="fechaFinal">
+    <button type="submit">Ver Reporte</button>
+</form>
+ <table border="1">
+         <!-- encabezado -->
+        <tr>
+          <th>Matricula</th>
+          <th>Maximo Peso</th>
+          <th>Maximo Volumen</th>
+        </tr>
+        <!-- iteracion datos -->
+        <% camiones.forEach(camion => { %>
+            <tr>
+                <!-- <td><%=          %></td> -->
+                <td><%=   camion.Matricula    %></td>
+                <td><%=    camion.MaxPeso      %></td> 
+                <td><%=     camion.MaxVolumen     %></td>
+            </tr>
+        <% }); %>
+      
+      </table>

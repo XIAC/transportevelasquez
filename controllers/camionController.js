@@ -9,14 +9,12 @@ exports.listarCamiones = (req, res) => {
 };
 
 exports.reporteCamionesNoUtilizados = (req, res) => {
-    console.log("resultado de request",req);
     const { fechaInicio, fechaFinal }  = req.query;
 
     camionModel.obtenerCamionesNoUtilizados(fechaInicio, fechaFinal, (err, dato) => {
         if (err) {
             return res.status(500).send('Error al obtener los camiones no utilizados!')
         }
-        
-        res.render('camion/camionesNoUtilizados.ejs', { camiones: dato })
+        res.render('camion/camionesNoUtilizados', { camiones: dato })
     });
 };

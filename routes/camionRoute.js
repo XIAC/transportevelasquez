@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const camionController = require('../controllers/camionController');
 
-router.get('/', camionController.listarCamiones);
-router.get('/reporte/camionesnoutilizados', camionController.reporteCamionesNoUtilizados);
+// router.get('/', camionController.listarCamiones);
+router.get('/reporte/camiones-no-utilizados', camionController.reporteCamionesNoUtilizados);
 
 module.exports = router;

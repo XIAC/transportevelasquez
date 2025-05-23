@@ -12,5 +12,17 @@ exports.obtenerTodosCamiones = (callback) => {
       });
 }    
 
+exports.obtenerCamionesNoUtilizados = (fechaInicio, fechaFinal, callback) => {
+    const sql = 'CALL CamionesNoUtilizados (?,?)';
+    db.query(sql, [fechaInicio, fechaFinal],function (err, result) {
+        if (err) {
+            console.log('Error en la consulta', err);
+            return;
+        };
+        console.log(result);
+        callback(null, result);
+      });
+}    
+
 
     

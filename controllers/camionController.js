@@ -18,3 +18,26 @@ exports.reporteCamionesNoUtilizados = (req, res) => {
         res.render('camion/camionesNoUtilizados', { camiones: dato })
     });
 };
+
+
+exports.reportePedidosPorMesAnio = (req, res) => {
+    const { anio, mes }  = req.query;
+
+    camionModel.obtenerPedidosMesAnio(anio, mes, (err, dato) => {
+        if (err) {
+            return res.status(500).send('Error al obtener los camiones no utilizados!')
+        }
+        res.render('camion/pedidoPorMesAnio', { pedidos: dato })
+    });
+};
+
+exports.reporteTransportePorCamion = (req, res) => {
+    const { fechaInicio, fechaFinal }  = req.query;
+
+    camionModel.obtenerTransportePorCamion(fechaInicio, fechaFinal, (err, dato) => {
+        if (err) {
+            return res.status(500).send('Error al obtener los camiones no utilizados!')
+        }
+        res.render('camion/transportPorCamion', { cargas: dato })
+    });
+};

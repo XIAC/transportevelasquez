@@ -1,7 +1,7 @@
 <h2>
-    CAMIONES NO UTILIZADOS
+    REPORTE DE TRANSPORTE POR CAMION ENTRE DOS FECHAS
 </h2>
-<form method="GET" action="/reporte/reporte-camiones-no-utilizados">
+<form method="GET" action="/reporte/transportePorCamion">
     <label>Fecha Inicio</label>
     <input type="date" name="fechaInicio">
     <label>Fecha Final</label>
@@ -12,16 +12,16 @@
          <!-- encabezado -->
         <tr>
           <th>Matricula</th>
-          <th>Maximo Peso</th>
-          <th>Maximo Volumen</th>
+          <th>Total Peso transportado</th>
+          <th>Total Volumen Transportado</th>
         </tr>
         <!-- iteracion datos -->
-        <% camiones.forEach(camion => { %>
+        <% cargas.forEach(C => { %>
             <tr>
                 <!-- <td><%=          %></td> -->
-                <td><%=   camion.Matricula    %></td>
-                <td><%=    camion.MaxPeso      %></td> 
-                <td><%=     camion.MaxVolumen     %></td>
+                <td><%=   C.Matricula    %></td>
+                <td><%=    C.TotalPesoTransportado      %></td> 
+                <td><%=     C.TotalVolumenTransportado     %></td>
             </tr>
         <% }); %>
       

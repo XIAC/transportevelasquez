@@ -1,0 +1,32 @@
+<h2>
+    PEDIDOS POR MES Y ANIO
+</h2>
+<form method="GET" action="/reporte/reportePedidosPorMesAnio">
+    <label>Anio</label>
+    <input type="number" name="anio">
+    <label>Mes</label>
+    <input type="number" name="mes">
+    <button type="submit">Ver Reporte</button>
+</form>
+ <table border="1">
+         <!-- encabezado -->
+        <tr>
+          <th>Ciudad Origen</th>
+          <th>Ciudad Destino</th>
+          <th>Total Pedidos</th>
+          <th>Peso Total</th>
+          <th>Volumen Total</th>
+        </tr>
+        <!-- iteracion datos -->
+        <% pedidos.forEach(p => { %>
+            <tr>
+                <!-- <td><%=          %></td> -->
+                <td><%=   p.CiudadOrigen    %></td>
+                <td><%=    p.CiudadDestino      %></td> 
+                <td><%=     p.TotalPedidos     %></td>
+                <td><%=     p.PesoTotal     %></td>
+                <td><%=     p.VolumenTotal     %></td>
+            </tr>
+        <% }); %>
+      
+      </table>
